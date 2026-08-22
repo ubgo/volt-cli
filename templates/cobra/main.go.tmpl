@@ -1,0 +1,30 @@
+// Command [[.Name]] — scaffolded by volt (cobra variant).
+package main
+
+import (
+	"fmt"
+	"os"
+
+	"github.com/spf13/cobra"
+)
+
+// Stamped by volt via .volt.yml ldflags; "dev" from source builds.
+var (
+	version = "dev"
+	commit  = "unknown"
+)
+
+func main() {
+	root := &cobra.Command{
+		Use:     "[[.Name]]",
+		Short:   "[[.Name]] — scaffolded by volt",
+		Version: fmt.Sprintf("%s (%s)", version, commit),
+		RunE: func(cmd *cobra.Command, args []string) error {
+			fmt.Println("hello from [[.Name]]", version)
+			return nil
+		},
+	}
+	if err := root.Execute(); err != nil {
+		os.Exit(1)
+	}
+}

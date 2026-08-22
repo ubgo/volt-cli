@@ -1,0 +1,11 @@
+# Variant metadata for `volt new cli --list`. One repo, many variants:
+# _base is the shared skeleton; each variant overlays files on top of it.
+# A variant that grows past ~50 lines of overlay is a kit gap, not a bigger
+# overlay (see voltkit's RELEASE_PIPELINE_SPEC, "Templates and variants").
+version: 1
+default: minimal
+variants:
+  minimal:
+    description: stdlib-only CLI — flag parsing, version stamping, no dependencies
+  cobra:
+    description: cobra root command with a version subcommand

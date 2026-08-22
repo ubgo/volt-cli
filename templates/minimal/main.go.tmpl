@@ -1,0 +1,23 @@
+// Command [[.Name]] — scaffolded by volt (minimal variant: stdlib only).
+package main
+
+import (
+	"flag"
+	"fmt"
+)
+
+// Stamped by volt via .volt.yml ldflags; "dev" from source builds.
+var (
+	version = "dev"
+	commit  = "unknown"
+)
+
+func main() {
+	showVersion := flag.Bool("version", false, "print version and exit")
+	flag.Parse()
+	if *showVersion {
+		fmt.Printf("[[.Name]] %s (%s)\n", version, commit)
+		return
+	}
+	fmt.Println("hello from [[.Name]]", version)
+}

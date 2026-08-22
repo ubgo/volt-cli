@@ -1,0 +1,18 @@
+binary: [[.Name]]
+ldflags:
+  vars:
+    main.version: "{{.Version}}"
+    main.commit: "{{.ShortCommit}}"
+
+# Written by volt new — the generation stamp a future `volt upgrade` needs to
+# re-render this template with the same answers and compute what changed.
+generated:
+  by: volt [[.VoltVersion]]
+  template: [[.TemplateRepo]]//templates/[[.Variant]]
+  ref: [[.Ref]]
+  commit: [[.TemplateCommit]]
+  at: [[.At]]
+  inputs:
+    name: [[.Name]]
+    module: [[.Module]]
+    variant: [[.Variant]]
